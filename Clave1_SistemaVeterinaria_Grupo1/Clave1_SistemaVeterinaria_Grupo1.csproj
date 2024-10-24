@@ -58,6 +58,12 @@
     <Compile Include="FormCita.Designer.cs">
       <DependentUpon>FormCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCitas.Designer.cs">
+      <DependentUpon>FormCitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCita.resx">
       <DependentUpon>FormCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCitas.resx">
+      <DependentUpon>FormCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
