@@ -93,17 +93,17 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(89, 27);
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(71, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 20);
+            this.label1.Size = new System.Drawing.Size(311, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Bienvenidos a Veterinaria Cat-Dog";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.veterinaria;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 95);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(171, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
