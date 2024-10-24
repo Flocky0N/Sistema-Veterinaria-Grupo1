@@ -83,7 +83,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnInicio
             // 
             this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnInicio.Location = new System.Drawing.Point(37, 154);
+            this.btnInicio.Location = new System.Drawing.Point(236, 172);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(75, 23);
             this.btnInicio.TabIndex = 5;
