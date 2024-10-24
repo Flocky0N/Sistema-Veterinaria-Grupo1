@@ -16,7 +16,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+            Application.Run(new InicioSesion());
         }
     }
 }
