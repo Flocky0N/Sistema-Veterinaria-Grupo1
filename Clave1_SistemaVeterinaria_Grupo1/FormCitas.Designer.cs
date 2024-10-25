@@ -91,7 +91,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(478, 10);
+            this.dateTimePicker1.Location = new System.Drawing.Point(466, 20);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 6;
@@ -140,6 +140,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.Controls.Add(this.label1);
             this.Name = "FormCitas";
             this.Text = "FormCitas";
+            this.Load += new System.EventHandler(this.FormCitas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

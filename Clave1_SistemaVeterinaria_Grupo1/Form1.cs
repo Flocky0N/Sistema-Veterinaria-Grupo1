@@ -16,5 +16,11 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         {
             InitializeComponent();
         }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            FormCitas formCitas = new FormCitas();
+            formCitas.ShowDialog();
+        }
     }
 }

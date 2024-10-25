@@ -69,6 +69,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnCitas.TabIndex = 2;
             this.btnCitas.Text = "Citas";
             this.btnCitas.UseVisualStyleBackColor = false;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnPagos
             // 
