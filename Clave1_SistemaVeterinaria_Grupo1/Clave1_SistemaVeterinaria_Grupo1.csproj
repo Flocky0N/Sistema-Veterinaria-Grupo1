@@ -122,5 +122,8 @@
   <ItemGroup>
     <None Include="Resources\veterinaria.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
