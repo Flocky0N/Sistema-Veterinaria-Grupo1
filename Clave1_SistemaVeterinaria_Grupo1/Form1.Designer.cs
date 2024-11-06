@@ -49,6 +49,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnClientes.TabIndex = 0;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnMascotas
             // 
@@ -59,6 +60,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnMascotas.TabIndex = 1;
             this.btnMascotas.Text = "Mascotas";
             this.btnMascotas.UseVisualStyleBackColor = false;
+            this.btnMascotas.Click += new System.EventHandler(this.btnMascotas_Click);
             // 
             // btnCitas
             // 
@@ -80,6 +82,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnPagos.TabIndex = 3;
             this.btnPagos.Text = "Pagos";
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnInventario
             // 
@@ -90,6 +93,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnInventario.TabIndex = 4;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // label1
             // 
@@ -120,13 +124,14 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(476, 273);
+            this.ClientSize = new System.Drawing.Size(476, 355);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
