@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Clave1_SistemaVeterinaria_Grupo1
 {
-    class conexionGrupo1
+     public class conexionGrupo1
     {
         // Cadena de conexión
         private static string servidor = "localhost";
