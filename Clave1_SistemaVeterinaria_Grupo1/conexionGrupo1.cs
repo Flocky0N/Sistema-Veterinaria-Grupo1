@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,11 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             {
                 Console.WriteLine("Error al cerrar la conexión: " + ex.Message);
             }
+        }
+
+        internal void Fill(DataTable table)
+        {
+            throw new NotImplementedException();
         }
     }
 }

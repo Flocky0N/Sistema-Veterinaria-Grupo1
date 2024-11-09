@@ -39,6 +39,9 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.textId = new System.Windows.Forms.TextBox();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -121,6 +124,7 @@
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -131,6 +135,7 @@
             this.btnModificar.TabIndex = 11;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnConsultar
             // 
@@ -141,12 +146,30 @@
             this.btnConsultar.TabIndex = 12;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // textId
+            // 
+            this.textId.Location = new System.Drawing.Point(26, 334);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.TabIndex = 13;
+            // 
+            // dgvInventario
+            // 
+            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.Location = new System.Drawing.Point(26, 380);
+            this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.Size = new System.Drawing.Size(522, 150);
+            this.dgvInventario.TabIndex = 14;
             // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 403);
+            this.ClientSize = new System.Drawing.Size(573, 594);
+            this.Controls.Add(this.dgvInventario);
+            this.Controls.Add(this.textId);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
@@ -160,6 +183,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Inventario";
             this.Text = "Inventario";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +202,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.TextBox textId;
+        private System.Windows.Forms.DataGridView dgvInventario;
     }
 }

@@ -16,15 +16,16 @@ namespace Clave1_SistemaVeterinaria_Grupo1
     public partial class Inventario : Form
     {
         private conexionGrupo1 conexionDB;
-      
+
 
         public Inventario()
         {
             InitializeComponent();
             conexionDB = new conexionGrupo1();
+            CargarInventario();
         }
 
-      
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -43,12 +44,14 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 MessageBox.Show("Ingrese datos en los campos correspondientes: " + Camposvacios());
                 return;
             }
-            Inventary inventario = new Inventary (txtNombre.Text, txtCantidad.Text, txtPrecio.Text);
-            ingresaProducto(inventario);
+            Inventary inventario = new Inventary(txtNombre.Text, txtCantidad.Text, txtPrecio.Text);
+            Producto(inventario);
 
         }
 
-        public void ingresaProducto (Inventary i)
+
+        //Agregar productos en la base de datos
+        internal void Producto(Inventary i)
         {
             MySqlConnection conexion = conexionDB.AbrirConexion();
             MySqlCommand consulta = new MySqlCommand();
@@ -117,5 +120,144 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             return string.IsNullOrWhiteSpace(texto);
 
         }
+
+        //Método para eliminar un producto
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conexion = conexionDB.AbrirConexion();
+            if (conexion != null)
+            {
+                try
+                {
+                    // Comando SQL para eliminar un producto por ID
+                    string query = "DELETE FROM producto WHERE idProducto = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+
+
+                    // Ejecuta el comando
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Producto eliminado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el producto: " + ex.Message);
+                }
+                finally
+                {
+                    // Cierra la conexión
+                    conexionDB.CerrarConexion();
+                }
+            }
+        }
+
+        //Método para modificar un producto
+        private void CargarInventario()
+        {
+            {
+                string query = "SELECT Id, Nombre, Cantidad, Precio FROM producto";
+                MySqlConnection conexion = conexionDB.AbrirConexion();
+                DataTable table = new DataTable();
+                conexionDB.Fill(table);
+                dgvInventario.DataSource = table;
+            }
+        }
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["Id"].Value);
+            string newNombre = txtNombre.Text;
+            string newCantidad = txtCantidad.Text;
+            string newPrecio = txtPrecio.Text;
+
+            if (string.IsNullOrEmpty(newNombre))
+            {
+                MessageBox.Show("Por favor, ingrese el nombre a modificar.");
+                return;
+            }
+            else if (string.IsNullOrEmpty(newCantidad))
+            {
+                MessageBox.Show("Por favor, ingrese la cantidad a modificar");
+                return;
+
+            }
+            else if (string.IsNullOrEmpty(newPrecio))
+            {
+                MessageBox.Show("Por favor, ingrese el precio a modificar");
+            }
+
+
+                MySqlConnection conexion = conexionDB.AbrirConexion();
+            if (conexion != null)
+            {
+                try
+                {
+                    // Comando SQL para eliminar un producto por ID
+                    string query = "UPDATE FROM producto nombre = @nombre, cantidad = @cantidad, precio = @precio WHERE idProducto = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@nombre", newNombre);
+                    cmd.Parameters.AddWithValue("@cantidad", newCantidad);
+                    cmd.Parameters.AddWithValue("@precio", newPrecio);
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+
+                    // Ejecuta el comando
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Producto actualizado exitosamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar el producto: " + ex.Message);
+                }
+                finally
+                {
+                    // Cierra la conexión
+                    conexionDB.CerrarConexion();
+                }
+            }
+        }
+
+        //Método para consultar
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            // Obtiene el id del producto desde el TextBox
+            string Producto = textId.Text;
+
+            if (string.IsNullOrEmpty(Producto))
+            {
+                MessageBox.Show("Por favor, ingrese el id del producto a buscar.");
+                return;
+            }
+
+
+            MySqlConnection conexion = conexionDB.AbrirConexion();
+            if (conexion != null)
+            { 
+                // Consulta para buscar productos por id
+                string query = "SELECT Id, Nombre, Cantidad, Precio FROM producto WHERE idProducto LIKE @id";
+                MySqlCommand cmd = new MySqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@id", "%" + Producto + "%");
+                DataTable table = new DataTable();
+
+                try
+                {   
+                   conexionDB.Fill(table);
+                        dgvInventario.DataSource = table;
+
+                        if (table.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No se encontraron productos con ese id.");
+                        }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al consultar el inventario: " + ex.Message);
+                }
+            }
+        }
+
+
+
+
+
     }
 }

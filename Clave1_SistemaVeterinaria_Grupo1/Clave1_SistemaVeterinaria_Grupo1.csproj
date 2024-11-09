@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\Inventario.cs" />
+    <Compile Include="Clases\Inventary.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +86,7 @@
     <Compile Include="Inventario.Designer.cs">
       <DependentUpon>Inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventario1.cs" />
     <Compile Include="Pago.cs">
       <SubType>Form</SubType>
     </Compile>
