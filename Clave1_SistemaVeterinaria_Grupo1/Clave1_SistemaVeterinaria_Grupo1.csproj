@@ -47,8 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Citas.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Inventary.cs" />
+    <Compile Include="Clases\Mascotas.cs" />
+    <Compile Include="Clases\Pagos.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\cliente.jfif" />
+    <None Include="Resources\inventarioa.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -59,6 +59,18 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         {
             throw new NotImplementedException();
         }
+
+        public void Fill(DataTable table, string query)
+        { 
+            try
+            { MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion); adapter.Fill(table);
+            
+            } 
+            catch (Exception ex)
+            { 
+                Console.WriteLine("Error al llenar el DataTable: " + ex.Message);
+            }
+        }
     }
 }
    

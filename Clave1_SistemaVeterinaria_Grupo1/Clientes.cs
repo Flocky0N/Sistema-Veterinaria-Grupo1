@@ -150,6 +150,15 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 conexionDB.CerrarConexion();
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar los campos de texto
+            txtNombre.Text = "";
+            txtTelefono.Text = "";
+            txtDireccion.Text = ""; 
+           
+        }
     }
 }
        

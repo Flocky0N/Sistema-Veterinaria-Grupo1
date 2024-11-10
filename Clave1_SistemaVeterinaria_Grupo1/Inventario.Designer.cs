@@ -41,7 +41,11 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.textId = new System.Windows.Forms.TextBox();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,48 +62,48 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 84);
+            this.label3.Location = new System.Drawing.Point(212, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.Size = new System.Drawing.Size(110, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre:";
+            this.label3.Text = "Nombre del Producto:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 148);
+            this.label4.Location = new System.Drawing.Point(212, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Cantidad disponible:";
+            this.label4.Text = "Cantidad de Producto:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(62, 221);
+            this.label5.Location = new System.Drawing.Point(212, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(103, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Precio:";
+            this.label5.Text = "Precio del Producto:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(181, 76);
+            this.txtNombre.Location = new System.Drawing.Point(346, 73);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(339, 20);
+            this.txtNombre.Size = new System.Drawing.Size(263, 20);
             this.txtNombre.TabIndex = 6;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(181, 140);
+            this.txtCantidad.Location = new System.Drawing.Point(346, 114);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(137, 20);
             this.txtCantidad.TabIndex = 7;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(181, 213);
+            this.txtPrecio.Location = new System.Drawing.Point(346, 156);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(137, 20);
             this.txtPrecio.TabIndex = 8;
@@ -107,7 +111,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAgregar.Location = new System.Drawing.Point(51, 281);
+            this.btnAgregar.Location = new System.Drawing.Point(34, 237);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 9;
@@ -118,7 +122,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Location = new System.Drawing.Point(181, 281);
+            this.btnEliminar.Location = new System.Drawing.Point(215, 237);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 10;
@@ -129,7 +133,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnModificar.Location = new System.Drawing.Point(318, 281);
+            this.btnModificar.Location = new System.Drawing.Point(127, 238);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 11;
@@ -140,7 +144,7 @@
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnConsultar.Location = new System.Drawing.Point(463, 281);
+            this.btnConsultar.Location = new System.Drawing.Point(435, 275);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 12;
@@ -150,7 +154,7 @@
             // 
             // textId
             // 
-            this.textId.Location = new System.Drawing.Point(26, 334);
+            this.textId.Location = new System.Drawing.Point(435, 240);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
             this.textId.TabIndex = 13;
@@ -158,16 +162,49 @@
             // dgvInventario
             // 
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Location = new System.Drawing.Point(26, 380);
+            this.dgvInventario.Location = new System.Drawing.Point(22, 338);
             this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(522, 150);
+            this.dgvInventario.Size = new System.Drawing.Size(578, 150);
             this.dgvInventario.TabIndex = 14;
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(296, 237);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(85, 23);
+            this.btnLimpiarCampos.TabIndex = 15;
+            this.btnLimpiarCampos.Text = "Limpiar";
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.inventarioa;
+            this.pictureBox1.Location = new System.Drawing.Point(34, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 130);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(432, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Ingrese el ID del producto:";
             // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 594);
+            this.ClientSize = new System.Drawing.Size(621, 503);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnLimpiarCampos);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.textId);
             this.Controls.Add(this.btnConsultar);
@@ -184,6 +221,7 @@
             this.Name = "Inventario";
             this.Text = "Inventario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +242,8 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.DataGridView dgvInventario;
+        private System.Windows.Forms.Button btnLimpiarCampos;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

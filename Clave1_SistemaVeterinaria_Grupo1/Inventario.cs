@@ -22,10 +22,14 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         {
             InitializeComponent();
             conexionDB = new conexionGrupo1();
-            CargarInventario();
+            dgvInventario.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Selección de filas completas
+            this.Load += new EventHandler(Inventario_Load); 
         }
 
-
+        private void Inventario_Load(object sender, EventArgs e)
+        {
+            CargarInventario(); // Carga el inventario automáticamente
+        }
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -124,19 +128,46 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         //Método para eliminar un producto
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+
+            if (dgvInventario.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un producto para eliminar.");
+                return;
+            }
+            int id = Convert.ToInt32(dgvInventario.SelectedRows[0].Cells["Id"].Value);
+
             MySqlConnection conexion = conexionDB.AbrirConexion();
             if (conexion != null)
             {
                 try
                 {
-                    // Comando SQL para eliminar un producto por ID
-                    string query = "DELETE FROM producto WHERE idProducto = @id";
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    // Verifica si el producto existe
+                    string checkQuery = "SELECT COUNT(*) FROM producto WHERE idProducto = @idProducto";
+                    MySqlCommand checkCmd = new MySqlCommand(checkQuery, conexion);
+                    checkCmd.Parameters.AddWithValue("@idProducto", id);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
 
-                    // Ejecuta el comando
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Producto eliminado exitosamente.");
+                    if (count == 0)
+                    {
+                        MessageBox.Show("El producto no existe en la base de datos.");
+                        return;
+                    }
+                    // Elimina el producto
+                    string deleteQuery = "DELETE FROM producto WHERE idProducto = @idProducto";
+                    MySqlCommand deleteCmd = new MySqlCommand(deleteQuery, conexion);
+                    deleteCmd.Parameters.AddWithValue("@idProducto", id);
+                    int rowsAffected = deleteCmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Producto eliminado exitosamente.");
+                        CargarInventario(); // Refresca el inventario
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el producto.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -144,9 +175,9 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 }
                 finally
                 {
-                    // Cierra la conexión
                     conexionDB.CerrarConexion();
                 }
+                
             }
         }
 
@@ -154,11 +185,37 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private void CargarInventario()
         {
             {
-                string query = "SELECT Id, Nombre, Cantidad, Precio FROM producto";
+                string query = "SELECT idProducto AS Id, nombre, cantidad, precio FROM producto";
                 MySqlConnection conexion = conexionDB.AbrirConexion();
                 DataTable table = new DataTable();
-                conexionDB.Fill(table);
-                dgvInventario.DataSource = table;
+
+
+                try
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion);
+                    adapter.Fill(table);
+                    dgvInventario.DataSource = table;
+
+                    if (table.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No se encontraron productos en la base de datos.");
+                    }
+                    else
+                    {
+                        dgvInventario.Columns["Id"].HeaderText = "ID";
+                        dgvInventario.Columns["nombre"].HeaderText = "Nombre";
+                        dgvInventario.Columns["cantidad"].HeaderText = "Cantidad";
+                        dgvInventario.Columns["precio"].HeaderText = "Precio";
+                    }
+                }
+                catch (Exception ex) 
+                { 
+                    MessageBox.Show("Error al cargar el inventario: " + ex.Message); 
+                }
+                finally
+                {
+                    conexionDB.CerrarConexion();
+                }
             }
         }
         private void btnModificar_Click(object sender, EventArgs e)
@@ -191,19 +248,27 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 try
                 {
                     // Comando SQL para eliminar un producto por ID
-                    string query = "UPDATE FROM producto nombre = @nombre, cantidad = @cantidad, precio = @precio WHERE idProducto = @id";
+                    string query = "UPDATE producto SET nombre = @nombre, cantidad = @cantidad, precio = @precio WHERE idProducto = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexion);
                     cmd.Parameters.AddWithValue("@nombre", newNombre);
                     cmd.Parameters.AddWithValue("@cantidad", newCantidad);
                     cmd.Parameters.AddWithValue("@precio", newPrecio);
-                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@id", id);
 
-
-                    // Ejecuta el comando
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Producto actualizado exitosamente.");
-                }
-                catch (Exception ex)
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    
+                        {
+                            MessageBox.Show("Producto actualizado exitosamente.");
+                            CargarInventario();
+                            // Refresca el inventario después de modificar
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontraron productos con ese Id.");
+                        }
+                    }
+                    catch (Exception ex)
                 {
                     MessageBox.Show("Error al actualizar el producto: " + ex.Message);
                 }
@@ -232,15 +297,16 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             if (conexion != null)
             { 
                 // Consulta para buscar productos por id
-                string query = "SELECT Id, Nombre, Cantidad, Precio FROM producto WHERE idProducto LIKE @id";
+                string query = "SELECT idProducto, nombre, cantidad, precio FROM producto WHERE idProducto LIKE @id";
                 MySqlCommand cmd = new MySqlCommand(query, conexion);
                 cmd.Parameters.AddWithValue("@id", "%" + Producto + "%");
                 DataTable table = new DataTable();
 
                 try
-                {   
-                   conexionDB.Fill(table);
-                        dgvInventario.DataSource = table;
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(table);
+                    dgvInventario.DataSource = table;
 
                         if (table.Rows.Count == 0)
                         {
@@ -255,9 +321,13 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             }
         }
 
-
-
-
-
+        private void btnLimpiarCampos_Click(object sender, EventArgs e)
+        {
+            // Limpiar los campos de texto
+            txtNombre.Text = "";
+            txtCantidad.Text = "";
+            txtPrecio.Text = "";
+           
+        }
     }
 }
