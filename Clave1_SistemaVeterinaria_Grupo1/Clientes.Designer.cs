@@ -38,7 +38,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnConexion = new System.Windows.Forms.Button();
             this.textId = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -46,8 +45,9 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,9 +104,9 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(304, 157);
+            this.txtDireccion.Location = new System.Drawing.Point(331, 157);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(373, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(329, 20);
             this.txtDireccion.TabIndex = 8;
             // 
             // btnAgregar
@@ -130,20 +130,12 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 335);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(623, 122);
-            this.dataGridView1.TabIndex = 11;
-            // 
             // btnConexion
             // 
             this.btnConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnConexion.Location = new System.Drawing.Point(510, 472);
             this.btnConexion.Name = "btnConexion";
-            this.btnConexion.Size = new System.Drawing.Size(136, 20);
+            this.btnConexion.Size = new System.Drawing.Size(136, 29);
             this.btnConexion.TabIndex = 12;
             this.btnConexion.Text = "Comprobar Conexión";
             this.btnConexion.UseVisualStyleBackColor = false;
@@ -158,12 +150,13 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnLimpiar.Location = new System.Drawing.Point(304, 223);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 14;
             this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label2
@@ -204,6 +197,15 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnModificar.TabIndex = 21;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(46, 305);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(578, 150);
+            this.dgvClientes.TabIndex = 22;
             // 
             // Clientes
             // 
@@ -211,6 +213,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(672, 563);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
@@ -218,7 +221,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.textId);
             this.Controls.Add(this.btnConexion);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtDireccion);
@@ -230,8 +232,8 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.Controls.Add(this.label1);
             this.Name = "Clientes";
             this.Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +250,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnConexion;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Button btnLimpiar;
@@ -256,5 +257,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.DataGridView dgvClientes;
     }
 }

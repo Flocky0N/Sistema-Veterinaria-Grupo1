@@ -44,6 +44,7 @@
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnConexion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -197,11 +198,23 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Ingrese el ID del producto:";
             // 
+            // btnConexion
+            // 
+            this.btnConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnConexion.Location = new System.Drawing.Point(464, 497);
+            this.btnConexion.Name = "btnConexion";
+            this.btnConexion.Size = new System.Drawing.Size(136, 29);
+            this.btnConexion.TabIndex = 18;
+            this.btnConexion.Text = "Comprobar Conexión";
+            this.btnConexion.UseVisualStyleBackColor = false;
+            this.btnConexion.Click += new System.EventHandler(this.btnConexion_Click);
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 503);
+            this.ClientSize = new System.Drawing.Size(621, 538);
+            this.Controls.Add(this.btnConexion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLimpiarCampos);
@@ -245,5 +258,6 @@
         private System.Windows.Forms.Button btnLimpiarCampos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnConexion;
     }
 }

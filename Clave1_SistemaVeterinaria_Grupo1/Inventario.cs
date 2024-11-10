@@ -329,5 +329,23 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             txtPrecio.Text = "";
            
         }
+
+        private void btnConexion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conexionDB.AbrirConexion();
+                MessageBox.Show("Conexión satisfactoria");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                conexionDB.CerrarConexion();
+            }
+        }
     }
 }

@@ -39,6 +39,8 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +93,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(466, 20);
+            this.dateTimePicker1.Location = new System.Drawing.Point(392, 45);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 6;
@@ -107,7 +109,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(392, 143);
+            this.btnAgregar.Location = new System.Drawing.Point(331, 163);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 34);
             this.btnAgregar.TabIndex = 8;
@@ -116,18 +118,27 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(521, 143);
+            this.btnCancelar.Location = new System.Drawing.Point(426, 163);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 34);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar Cita";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // dgvInventario
+            // 
+            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.Location = new System.Drawing.Point(35, 247);
+            this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.Size = new System.Drawing.Size(578, 150);
+            this.dgvInventario.TabIndex = 15;
+            // 
             // FormCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 254);
+            this.ClientSize = new System.Drawing.Size(653, 432);
+            this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label4);
@@ -141,6 +152,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.Name = "FormCitas";
             this.Text = "FormCitas";
             this.Load += new System.EventHandler(this.FormCitas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +170,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView dgvInventario;
     }
 }
