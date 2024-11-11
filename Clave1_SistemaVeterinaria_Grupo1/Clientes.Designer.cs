@@ -42,12 +42,13 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.textId = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,7 +98,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(331, 106);
+            this.txtTelefono.Location = new System.Drawing.Point(331, 109);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(156, 20);
             this.txtTelefono.TabIndex = 7;
@@ -129,6 +130,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnConexion
             // 
@@ -168,25 +170,16 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.label2.TabIndex = 18;
             this.label2.Text = "Ingrese el ID del  Cliente:";
             // 
-            // button1
+            // btnConsultar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.Location = new System.Drawing.Point(524, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Consultar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.cliente;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnConsultar.Location = new System.Drawing.Point(524, 261);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.TabIndex = 19;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnModificar
             // 
@@ -204,8 +197,29 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(46, 305);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(578, 150);
+            this.dgvClientes.Size = new System.Drawing.Size(600, 150);
             this.dgvClientes.TabIndex = 22;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSalir.Location = new System.Drawing.Point(443, 472);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(61, 29);
+            this.btnSalir.TabIndex = 23;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.cliente;
+            this.pictureBox1.Location = new System.Drawing.Point(23, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(192, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // Clientes
             // 
@@ -213,10 +227,11 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(672, 563);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.textId);
@@ -232,8 +247,8 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.Controls.Add(this.label1);
             this.Name = "Clientes";
             this.Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,9 +269,10 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

@@ -347,5 +347,10 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 conexionDB.CerrarConexion();
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

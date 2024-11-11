@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Clave1_SistemaVeterinaria_Grupo1.Clases;
 
 namespace Clave1_SistemaVeterinaria_Grupo1
 {
@@ -51,7 +52,9 @@ namespace Clave1_SistemaVeterinaria_Grupo1
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
+
+        
     }
 }

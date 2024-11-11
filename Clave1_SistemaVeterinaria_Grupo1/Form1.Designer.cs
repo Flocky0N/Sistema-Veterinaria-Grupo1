@@ -43,55 +43,55 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnClientes.Location = new System.Drawing.Point(215, 108);
+            this.btnClientes.Location = new System.Drawing.Point(262, 88);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(75, 23);
+            this.btnClientes.Size = new System.Drawing.Size(128, 23);
             this.btnClientes.TabIndex = 0;
-            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Text = "Registro Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnMascotas
             // 
             this.btnMascotas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnMascotas.Location = new System.Drawing.Point(215, 155);
+            this.btnMascotas.Location = new System.Drawing.Point(262, 126);
             this.btnMascotas.Name = "btnMascotas";
-            this.btnMascotas.Size = new System.Drawing.Size(75, 23);
+            this.btnMascotas.Size = new System.Drawing.Size(128, 23);
             this.btnMascotas.TabIndex = 1;
-            this.btnMascotas.Text = "Mascotas";
+            this.btnMascotas.Text = "Registro Mascotas";
             this.btnMascotas.UseVisualStyleBackColor = false;
             this.btnMascotas.Click += new System.EventHandler(this.btnMascotas_Click);
             // 
             // btnCitas
             // 
             this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnCitas.Location = new System.Drawing.Point(338, 108);
+            this.btnCitas.Location = new System.Drawing.Point(262, 165);
             this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(75, 23);
+            this.btnCitas.Size = new System.Drawing.Size(128, 23);
             this.btnCitas.TabIndex = 2;
-            this.btnCitas.Text = "Citas";
+            this.btnCitas.Text = "Registro Citas";
             this.btnCitas.UseVisualStyleBackColor = false;
             this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnPagos
             // 
             this.btnPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnPagos.Location = new System.Drawing.Point(338, 155);
+            this.btnPagos.Location = new System.Drawing.Point(262, 203);
             this.btnPagos.Name = "btnPagos";
-            this.btnPagos.Size = new System.Drawing.Size(75, 23);
+            this.btnPagos.Size = new System.Drawing.Size(128, 23);
             this.btnPagos.TabIndex = 3;
-            this.btnPagos.Text = "Pagos";
+            this.btnPagos.Text = "Registro Pagos";
             this.btnPagos.UseVisualStyleBackColor = false;
             this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnInventario
             // 
             this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnInventario.Location = new System.Drawing.Point(215, 200);
+            this.btnInventario.Location = new System.Drawing.Point(262, 245);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(75, 23);
+            this.btnInventario.Size = new System.Drawing.Size(128, 23);
             this.btnInventario.TabIndex = 4;
-            this.btnInventario.Text = "Inventario";
+            this.btnInventario.Text = "Registro Inventario";
             this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
@@ -99,7 +99,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(79, 40);
+            this.label1.Location = new System.Drawing.Point(57, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(311, 20);
             this.label1.TabIndex = 5;
@@ -110,7 +110,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.veterinaria;
             this.pictureBox1.Location = new System.Drawing.Point(24, 88);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 149);
+            this.pictureBox1.Size = new System.Drawing.Size(217, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -118,7 +118,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnSalir.Location = new System.Drawing.Point(338, 200);
+            this.btnSalir.Location = new System.Drawing.Point(24, 245);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 7;
@@ -131,7 +131,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(476, 355);
+            this.ClientSize = new System.Drawing.Size(412, 312);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);

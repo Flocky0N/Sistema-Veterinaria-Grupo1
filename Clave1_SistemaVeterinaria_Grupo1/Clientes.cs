@@ -110,35 +110,8 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         {
             return string.IsNullOrWhiteSpace(texto);
         }
-        // Método para eliminar un cliente
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            MySqlConnection conexion = conexionDB.AbrirConexion();
-            if (conexion != null)
-            {
-                try
-                {
-                    // Comando SQL para eliminar un cliente por ID
-                    string query = "DELETE FROM cliente WHERE idCliente = @id";
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-
-
-                    // Ejecuta el comando
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Cliente eliminado exitosamente.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al eliminar cliente: " + ex.Message);
-                }
-                finally
-                {
-                    // Cierra la conexión
-                    conexionDB.CerrarConexion();
-                }
-            }
-        }
-
+       
+       
         private void btnConexion_Click(object sender, EventArgs e)
         {
             try
@@ -205,9 +178,10 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 }
             }
         }
+       
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["Id"].Value);
+            int id = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells[0].Value);
             string newNombre = txtNombre.Text;
             string newTelefono = txtTelefono.Text;
             string newDireccion = txtDireccion.Text;
@@ -267,7 +241,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             }
         }
 
-        //Método para consultar
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             // Obtiene el id del producto desde el TextBox
@@ -308,9 +281,54 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             }
         }
 
-       
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un cliente para eliminar.");
+                return;
+            }
+            int id = Convert.ToInt32(dgvClientes.SelectedRows[0].Cells["ID"].Value);
+
+            MySqlConnection conexion = conexionDB.AbrirConexion();
+            if (conexion != null)
+            {
+                try
+                {
+                    // Comando SQL para eliminar un cliente por ID
+                    string query = "DELETE FROM cliente WHERE idCliente = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@id", id); // Asigna el ID al parámetro
+
+                    // Ejecuta el comando
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Cliente eliminado exitosamente.");
+
+                    //Recarga la lista de clientes
+                    CargarClientes();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar cliente: " + ex.Message);
+                }
+                finally
+                {
+                    // Cierra la conexión
+                    conexionDB.CerrarConexion();
+                }
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
+
+
+
+
 
 
 

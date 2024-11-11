@@ -42,9 +42,10 @@
             this.textId = new System.Windows.Forms.TextBox();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConexion = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +56,9 @@
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(208, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 39);
+            this.label1.Size = new System.Drawing.Size(239, 39);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Inventario";
+            this.label1.Text = "Registro Inventario";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
@@ -112,7 +113,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAgregar.Location = new System.Drawing.Point(34, 237);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 237);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 9;
@@ -123,7 +124,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Location = new System.Drawing.Point(215, 237);
+            this.btnEliminar.Location = new System.Drawing.Point(202, 237);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 10;
@@ -134,7 +135,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnModificar.Location = new System.Drawing.Point(127, 238);
+            this.btnModificar.Location = new System.Drawing.Point(107, 237);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 11;
@@ -179,16 +180,6 @@
             this.btnLimpiarCampos.UseVisualStyleBackColor = false;
             this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.inventarioa;
-            this.pictureBox1.Location = new System.Drawing.Point(34, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -209,11 +200,33 @@
             this.btnConexion.UseVisualStyleBackColor = false;
             this.btnConexion.Click += new System.EventHandler(this.btnConexion_Click);
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSalir.Location = new System.Drawing.Point(399, 497);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(59, 29);
+            this.btnSalir.TabIndex = 19;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Clave1_SistemaVeterinaria_Grupo1.Properties.Resources.inventarioa;
+            this.pictureBox1.Location = new System.Drawing.Point(34, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 130);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 538);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnConexion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -259,5 +272,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConexion;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

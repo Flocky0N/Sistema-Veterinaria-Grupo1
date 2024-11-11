@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Clave1_SistemaVeterinaria_Grupo1.Clases
 {
-    class Mascotas
+    public class Mascotas
     {
         //Atributos de la clase llamada Mascota
         private string nombre;
-        private string edad;
+        private string tipo;
         private string raza;
-        private string fechaNacimiento;
-        private string idCliente;
+        private int edad;
+        private int idCliente;
 
 
         //Metodos accesores para poder acceder a la clase Mascota
@@ -24,33 +24,34 @@ namespace Clave1_SistemaVeterinaria_Grupo1.Clases
             get => nombre;
             set => nombre = value;
         }
-        public string Edad
+        public string Tipo
         {
-            get => edad;
-            set => edad = value;
+            get => tipo;
+            set => tipo = value;
         }
         public string Raza
         {
             get => raza;
             set => raza = value;
         }
-        public string FechaNacimiento
+        public int Edad
         {
-            get => fechaNacimiento;
-            set => fechaNacimiento = value;
+            get => edad;
+            set => edad = value;
         }
-        public string IdCliente
+        public int IdCliente
         {
             get => idCliente;
             set => idCliente = value;
         }
 
         //Constructores clase Mascotas
-        public Mascotas(string NOMBRE, string RAZA, string FECHANACIMIENTO, string IDCLIENTE)
+        public Mascotas(string NOMBRE, string TIPO, string RAZA, int EDAD, int IDCLIENTE)
         {
             this.nombre = NOMBRE;
+            this.tipo = TIPO;
             this.raza = RAZA;
-            this.fechaNacimiento = FECHANACIMIENTO;
+            this.edad = EDAD;
             this.idCliente = IDCLIENTE;
         }
 

@@ -103,6 +103,16 @@ namespace Clave1_SistemaVeterinaria_Grupo1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mascotas {
+            get {
+                object obj = ResourceManager.GetObject("mascotas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap veterinaria {
             get {
                 object obj = ResourceManager.GetObject("veterinaria", resourceCulture);

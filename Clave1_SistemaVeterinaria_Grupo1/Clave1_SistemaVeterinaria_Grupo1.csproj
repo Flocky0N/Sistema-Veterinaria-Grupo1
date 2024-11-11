@@ -77,12 +77,6 @@
     <Compile Include="FormMascotas.Designer.cs">
       <DependentUpon>FormMascotas.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InicioSesion.Designer.cs">
-      <DependentUpon>InicioSesion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +103,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMascotas.resx">
       <DependentUpon>FormMascotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InicioSesion.resx">
-      <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -153,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\mascotas.jpg" />
     <None Include="Resources\cliente.jfif" />
     <None Include="Resources\inventarioa.png" />
   </ItemGroup>
