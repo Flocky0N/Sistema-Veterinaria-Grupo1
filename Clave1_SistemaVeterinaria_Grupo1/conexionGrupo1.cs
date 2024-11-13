@@ -12,7 +12,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
     {
         // Cadena de conexión
         private static string servidor = "localhost";
-        private static string dataBase = "VeterinariaGrupo01";
+        private static string dataBase = "veterinariagrupo01";
         private static string usuario = "root";
         private static string pass = "root";
         private static string cadenaConexion = $"Server={servidor};Database={dataBase};User ID={usuario};Password={pass};";

@@ -47,11 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Animal.cs" />
     <Compile Include="Clases\Citas.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Inventary.cs" />
     <Compile Include="Clases\Mascotas.cs" />
     <Compile Include="Clases\Pagos.cs" />
+    <Compile Include="Clases\persona.cs" />
+    <Compile Include="Clases\usuario.cs" />
     <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +79,12 @@
     </Compile>
     <Compile Include="FormMascotas.Designer.cs">
       <DependentUpon>FormMascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario.cs">
       <SubType>Form</SubType>
@@ -103,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMascotas.resx">
       <DependentUpon>FormMascotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -144,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\cita.jfif" />
     <None Include="Resources\mascotas.jpg" />
     <None Include="Resources\cliente.jfif" />
     <None Include="Resources\inventarioa.png" />

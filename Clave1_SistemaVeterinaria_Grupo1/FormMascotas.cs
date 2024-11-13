@@ -88,7 +88,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             consulta.CommandText = "INSERT INTO mascota(nombre,tipo,raza,edad, idCliente) " +
             "VALUES(@nombre, @tipo, @raza, @edad,@idCliente)";
 
-            consulta.Parameters.AddWithValue("@nombre", c.NombreMascota);
+            consulta.Parameters.AddWithValue("@nombre", c.Nombre);
             consulta.Parameters.AddWithValue("@tipo", c.Tipo);
             consulta.Parameters.AddWithValue("@raza", c.Raza);
             consulta.Parameters.AddWithValue("@edad", c.Edad);
@@ -247,6 +247,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             else if (string.IsNullOrEmpty(newIdDueño))
             {
                 MessageBox.Show("Por favor, ingrese el ID del dueño a modificar");
+                return;
             }
 
 

@@ -57,3 +57,4 @@ C:\Users\Administrator\source\repos\Sistema-Veterinaria-Grupo1\Clave1_SistemaVet
 C:\Users\Administrator\source\repos\Sistema-Veterinaria-Grupo1\Clave1_SistemaVeterinaria_Grupo1\obj\Debug\Clave1_SistemaVeterinaria_Grupo1.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Sistema-Veterinaria-Grupo1\Clave1_SistemaVeterinaria_Grupo1\obj\Debug\Clave1_SistemaVeterinaria_Grupo1.exe
 C:\Users\Administrator\source\repos\Sistema-Veterinaria-Grupo1\Clave1_SistemaVeterinaria_Grupo1\obj\Debug\Clave1_SistemaVeterinaria_Grupo1.pdb
+C:\Users\Naidelyn\Desktop\Clave1_SistemaVeterinaria_Grupo1\Clave1_SistemaVeterinaria_Grupo1\obj\Debug\Clave1_SistemaVeterinaria_Grupo1.InicioSesion.resources

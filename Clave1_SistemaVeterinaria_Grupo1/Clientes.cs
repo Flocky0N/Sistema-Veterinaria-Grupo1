@@ -51,7 +51,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             consulta.CommandText = "INSERT INTO cliente(nombre,telefono, direccion) " +
                 "VALUES(@nombre, @telefono, @direccion)";
 
-            consulta.Parameters.AddWithValue("@nombre", c.NombreCliente);
+            consulta.Parameters.AddWithValue("@nombre", c.Nombre);
             consulta.Parameters.AddWithValue("@telefono", c.Telefono);
             consulta.Parameters.AddWithValue("@direccion", c.Direccion);
 
