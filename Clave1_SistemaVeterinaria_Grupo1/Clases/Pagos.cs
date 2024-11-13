@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clave1_SistemaVeterinaria_Grupo1.Clases
 {
-    class Pagos
+    public class Pagos
     {
 
         //Atributos de la clase llamada Mascota

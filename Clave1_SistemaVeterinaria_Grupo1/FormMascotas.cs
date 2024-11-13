@@ -214,7 +214,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
-            int id = Convert.ToInt32(dgvMascotas.SelectedRows[0].Cells[0].Value);
+            int id = Convert.ToInt32(dgvMascotas.SelectedRows[0].Cells["Id"].Value);
             string newNombre = txtNombreMascota.Text;
             string newTipo = txtTipo.Text;
             string newRaza = txtRaza.Text;
