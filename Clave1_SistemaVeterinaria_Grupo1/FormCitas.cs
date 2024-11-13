@@ -21,9 +21,9 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         {
             InitializeComponent();
             conexionDB = new conexionGrupo1();
-            // Evento cuando el usuario cambia el ID de cliente
-            txtIDCliente.Leave += txtIDCliente_Leave;
-            CargarCitas();
+            txtIDCliente.Leave += txtIDCliente_Leave; 
+            dgvCita.CellClick += dgvCitas_CellClick; 
+            CargarCitas(); // Cargar todas las citas al iniciar el formulario
 
         }
         private void txtIDCliente_Leave(object sender, EventArgs e)
@@ -85,14 +85,14 @@ namespace Clave1_SistemaVeterinaria_Grupo1
 
         }
         // Evento para seleccionar el ID de la mascota desde el DataGridView
-        private void dgvMascotas_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCitas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) // Verifica que la fila seleccionada sea válida
-            {
-                txtIDMascota.Text = dgvCita.Rows[e.RowIndex].Cells["idMascota"].Value.ToString();
+            { 
+                txtIDCita.Text = dgvCita.Rows[e.RowIndex].Cells["idCita"].Value.ToString();
             }
         }
-        public void ingresarCita(Citas cita)
+                public void ingresarCita(Citas cita)
         {
             MySqlConnection conexion = conexionDB.AbrirConexion();
             if (conexion != null)
@@ -180,15 +180,8 @@ namespace Clave1_SistemaVeterinaria_Grupo1
                 }
             }
         }
-        private void dgvcitasRegistros_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            // Verifica que la fila seleccionada sea válida
-            {
-                txtIDCita.Text = dgvCita.Rows[e.RowIndex].Cells["idCita"].Value.ToString();
 
-            }
-        }
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtIDCita.Text, out int idCita))
@@ -221,6 +214,65 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             else { MessageBox.Show("Por favor, seleccione una cita válida para cancelar."); }
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            // Limpiar los campos de texto
+            txtIDCita.Text = "";
+            txtestadoMascota.Text = "";
+            txtIDCliente.Text = "";
+            txtIDMascota.Text = "";
 
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIDCita.Text, out int idCita) &&
+                DateTime.TryParse(dtpfechahora.Value.ToString(), out DateTime fechaHora) && 
+                int.TryParse(txtIDCliente.Text, out int idCliente) && 
+                int.TryParse(txtIDMascota.Text, out int idMascota))
+            {
+                MySqlConnection conexion = conexionDB.AbrirConexion();
+                if (conexion != null)
+                {
+                    try
+                    {
+                        string query = "UPDATE cita SET fechaHora = @fechaHora, estadoMascota = @estadoMascota, idCliente = @idCliente, idMascota = @idMascota WHERE idCita = @idCita";
+                        MySqlCommand cmd = new MySqlCommand(query, conexion);
+                        cmd.Parameters.AddWithValue("@fechaHora", dtpfechahora.Value);
+                        cmd.Parameters.AddWithValue("@estadoMascota", txtestadoMascota.Text);
+                        cmd.Parameters.AddWithValue("@idCliente", int.Parse(txtIDCliente.Text));
+                        cmd.Parameters.AddWithValue("@idMascota", int.Parse(txtIDMascota.Text));
+                        cmd.Parameters.AddWithValue("@idCita", idCita);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("La cita ha sido modificada exitosamente.");
+                            CargarCitas();
+                            // Actualizar el DataGridView
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo modificar la cita.");
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error al modificar la cita: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conexionDB.CerrarConexion();
+
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una cita válida para modificar.");
+
+            }
+        }
     }
 }
+
+                      

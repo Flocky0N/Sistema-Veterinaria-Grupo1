@@ -43,6 +43,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.txtestadoMascota = new System.Windows.Forms.TextBox();
             this.dgvCitasRegistros = new System.Windows.Forms.DataGridView();
             this.txtIDCita = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitasRegistros)).BeginInit();
@@ -98,22 +99,24 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // btnAgregar
             // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAgregar.Location = new System.Drawing.Point(22, 192);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 34);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar Cita";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(658, 306);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCancelar.Location = new System.Drawing.Point(658, 289);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 34);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar Cita";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvCita
@@ -121,7 +124,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.dgvCita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCita.Location = new System.Drawing.Point(572, 27);
             this.dgvCita.Name = "dgvCita";
-            this.dgvCita.Size = new System.Drawing.Size(261, 113);
+            this.dgvCita.Size = new System.Drawing.Size(240, 93);
             this.dgvCita.TabIndex = 15;
             // 
             // pictureBox1
@@ -162,14 +165,26 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             this.txtIDCita.Location = new System.Drawing.Point(658, 346);
             this.txtIDCita.Name = "txtIDCita";
-            this.txtIDCita.Size = new System.Drawing.Size(100, 20);
+            this.txtIDCita.Size = new System.Drawing.Size(96, 20);
             this.txtIDCita.TabIndex = 20;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLimpiar.Location = new System.Drawing.Point(121, 192);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(82, 34);
+            this.btnLimpiar.TabIndex = 21;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FormCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 423);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtIDCita);
             this.Controls.Add(this.dgvCitasRegistros);
             this.Controls.Add(this.txtestadoMascota);
@@ -210,5 +225,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.TextBox txtestadoMascota;
         private System.Windows.Forms.DataGridView dgvCitasRegistros;
         private System.Windows.Forms.TextBox txtIDCita;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
