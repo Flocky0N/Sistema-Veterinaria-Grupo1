@@ -176,6 +176,11 @@ namespace Clave1_SistemaVeterinaria_Grupo1
            // Restablece la fecha a la fecha actual
             txtIdCita.Clear();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
  

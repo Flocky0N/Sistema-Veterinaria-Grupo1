@@ -43,6 +43,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.dgvCitasPago = new System.Windows.Forms.DataGridView();
             this.txtIdPago = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitasPago)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +67,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAgregar.Location = new System.Drawing.Point(395, 50);
+            this.btnAgregar.Location = new System.Drawing.Point(395, 31);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(104, 21);
             this.btnAgregar.TabIndex = 2;
@@ -114,7 +115,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnL
             // 
             this.btnL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnL.Location = new System.Drawing.Point(395, 127);
+            this.btnL.Location = new System.Drawing.Point(529, 29);
             this.btnL.Name = "btnL";
             this.btnL.Size = new System.Drawing.Size(104, 23);
             this.btnL.TabIndex = 8;
@@ -141,7 +142,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnEliminar.Location = new System.Drawing.Point(395, 83);
+            this.btnEliminar.Location = new System.Drawing.Point(395, 73);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(104, 23);
             this.btnEliminar.TabIndex = 11;
@@ -152,7 +153,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(44, 406);
+            this.dgvPagos.Location = new System.Drawing.Point(29, 394);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.Size = new System.Drawing.Size(561, 126);
             this.dgvPagos.TabIndex = 12;
@@ -160,23 +161,35 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // dgvCitasPago
             // 
             this.dgvCitasPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitasPago.Location = new System.Drawing.Point(44, 227);
+            this.dgvCitasPago.Location = new System.Drawing.Point(29, 229);
             this.dgvCitasPago.Name = "dgvCitasPago";
             this.dgvCitasPago.Size = new System.Drawing.Size(561, 126);
             this.dgvCitasPago.TabIndex = 13;
             // 
             // txtIdPago
             // 
-            this.txtIdPago.Location = new System.Drawing.Point(538, 86);
+            this.txtIdPago.Location = new System.Drawing.Point(395, 102);
             this.txtIdPago.Name = "txtIdPago";
-            this.txtIdPago.Size = new System.Drawing.Size(100, 20);
+            this.txtIdPago.Size = new System.Drawing.Size(104, 20);
             this.txtIdPago.TabIndex = 14;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSalir.Location = new System.Drawing.Point(529, 73);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(104, 23);
+            this.btnSalir.TabIndex = 15;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 564);
+            this.ClientSize = new System.Drawing.Size(644, 552);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtIdPago);
             this.Controls.Add(this.dgvCitasPago);
             this.Controls.Add(this.dgvPagos);
@@ -216,5 +229,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.DataGridView dgvPagos;
         private System.Windows.Forms.DataGridView dgvCitasPago;
         private System.Windows.Forms.TextBox txtIdPago;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
