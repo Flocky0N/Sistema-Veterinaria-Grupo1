@@ -44,6 +44,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.dgvCitasPago = new System.Windows.Forms.DataGridView();
             this.txtIdPago = new System.Windows.Forms.TextBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitasPago)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 39);
+            this.label1.Location = new System.Drawing.Point(61, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 0;
@@ -59,7 +60,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(166, 36);
+            this.txtMonto.Location = new System.Drawing.Point(166, 66);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(121, 20);
             this.txtMonto.TabIndex = 1;
@@ -78,7 +79,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 161);
+            this.label2.Location = new System.Drawing.Point(61, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtIdCita
             // 
-            this.txtIdCita.Location = new System.Drawing.Point(166, 158);
+            this.txtIdCita.Location = new System.Drawing.Point(166, 182);
             this.txtIdCita.Name = "txtIdCita";
             this.txtIdCita.Size = new System.Drawing.Size(101, 20);
             this.txtIdCita.TabIndex = 4;
@@ -94,7 +95,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 83);
+            this.label3.Location = new System.Drawing.Point(61, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 6;
@@ -107,7 +108,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             "Efectivo",
             "Tarjeta",
             "Bitcoin"});
-            this.cmbPago.Location = new System.Drawing.Point(166, 75);
+            this.cmbPago.Location = new System.Drawing.Point(166, 102);
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(121, 21);
             this.cmbPago.TabIndex = 7;
@@ -115,7 +116,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnL
             // 
             this.btnL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnL.Location = new System.Drawing.Point(529, 29);
+            this.btnL.Location = new System.Drawing.Point(528, 31);
             this.btnL.Name = "btnL";
             this.btnL.Size = new System.Drawing.Size(104, 23);
             this.btnL.TabIndex = 8;
@@ -126,7 +127,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 127);
+            this.label4.Location = new System.Drawing.Point(61, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 9;
@@ -134,7 +135,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(166, 121);
+            this.dtpFecha.Location = new System.Drawing.Point(166, 148);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 10;
@@ -176,7 +177,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSalir.Location = new System.Drawing.Point(529, 73);
+            this.btnSalir.Location = new System.Drawing.Point(528, 73);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(104, 23);
             this.btnSalir.TabIndex = 15;
@@ -184,11 +185,22 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(93, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 39);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Registro Pago";
+            // 
             // Pago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 552);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtIdPago);
             this.Controls.Add(this.dgvCitasPago);
@@ -230,5 +242,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.DataGridView dgvCitasPago;
         private System.Windows.Forms.TextBox txtIdPago;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label5;
     }
 }

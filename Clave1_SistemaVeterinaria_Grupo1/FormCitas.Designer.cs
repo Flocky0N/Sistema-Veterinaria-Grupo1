@@ -44,6 +44,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.dgvCitasRegistros = new System.Windows.Forms.DataGridView();
             this.txtIDCita = new System.Windows.Forms.TextBox();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitasRegistros)).BeginInit();
@@ -52,7 +53,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(224, 53);
+            this.label1.Location = new System.Drawing.Point(224, 126);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +61,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtIDCliente
             // 
-            this.txtIDCliente.Location = new System.Drawing.Point(351, 53);
+            this.txtIDCliente.Location = new System.Drawing.Point(351, 113);
             this.txtIDCliente.Name = "txtIDCliente";
             this.txtIDCliente.Size = new System.Drawing.Size(125, 20);
             this.txtIDCliente.TabIndex = 1;
@@ -68,7 +69,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(224, 120);
+            this.label2.Location = new System.Drawing.Point(224, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 2;
@@ -76,14 +77,14 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtIDMascota
             // 
-            this.txtIDMascota.Location = new System.Drawing.Point(351, 120);
+            this.txtIDMascota.Location = new System.Drawing.Point(351, 189);
             this.txtIDMascota.Name = "txtIDMascota";
             this.txtIDMascota.Size = new System.Drawing.Size(125, 20);
             this.txtIDMascota.TabIndex = 4;
             // 
             // dtpfechahora
             // 
-            this.dtpfechahora.Location = new System.Drawing.Point(351, 20);
+            this.dtpfechahora.Location = new System.Drawing.Point(351, 77);
             this.dtpfechahora.Name = "dtpfechahora";
             this.dtpfechahora.Size = new System.Drawing.Size(200, 20);
             this.dtpfechahora.TabIndex = 6;
@@ -91,7 +92,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(221, 27);
+            this.label4.Location = new System.Drawing.Point(224, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 7;
@@ -140,7 +141,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(224, 84);
+            this.label5.Location = new System.Drawing.Point(224, 157);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 13);
             this.label5.TabIndex = 17;
@@ -148,7 +149,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtestadoMascota
             // 
-            this.txtestadoMascota.Location = new System.Drawing.Point(351, 84);
+            this.txtestadoMascota.Location = new System.Drawing.Point(351, 154);
             this.txtestadoMascota.Name = "txtestadoMascota";
             this.txtestadoMascota.Size = new System.Drawing.Size(200, 20);
             this.txtestadoMascota.TabIndex = 18;
@@ -163,7 +164,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             // 
             // txtIDCita
             // 
-            this.txtIDCita.Location = new System.Drawing.Point(658, 346);
+            this.txtIDCita.Location = new System.Drawing.Point(658, 338);
             this.txtIDCita.Name = "txtIDCita";
             this.txtIDCita.Size = new System.Drawing.Size(96, 20);
             this.txtIDCita.TabIndex = 20;
@@ -179,11 +180,22 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(275, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 39);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Registro Citas";
+            // 
             // FormCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 423);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.txtIDCita);
             this.Controls.Add(this.dgvCitasRegistros);
@@ -226,5 +238,6 @@ namespace Clave1_SistemaVeterinaria_Grupo1
         private System.Windows.Forms.DataGridView dgvCitasRegistros;
         private System.Windows.Forms.TextBox txtIDCita;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label label3;
     }
 }
