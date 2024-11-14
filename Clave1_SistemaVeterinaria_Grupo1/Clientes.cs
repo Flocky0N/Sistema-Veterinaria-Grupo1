@@ -200,6 +200,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             else if (string.IsNullOrEmpty(newDireccion))
             {
                 MessageBox.Show("Por favor, ingrese la dirección a modificar");
+                return;
             }
 
 

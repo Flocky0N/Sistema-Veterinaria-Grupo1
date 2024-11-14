@@ -236,6 +236,7 @@ namespace Clave1_SistemaVeterinaria_Grupo1
             else if (string.IsNullOrEmpty(newRaza))
             {
                 MessageBox.Show("Por favor, ingrese la raza a a modificar");
+                return;
             }
             else if (string.IsNullOrEmpty(newEdad))
             {
